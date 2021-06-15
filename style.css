@@ -1,0 +1,117 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+    background-color: black;
+}
+.emoji{
+    position: relative;
+    height: 120px;
+    width: 120px;
+    background-color: rgb(219, 216, 23);
+    border-radius: 50%;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+}
+.face{
+    height: inherit;
+    width: inherit;
+    animation: wow-face 3s linear infinite;
+}
+.eyebrows{
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    top: 15px;
+    left: 57px;
+    border-radius: 50%;
+    box-shadow: -18px 0 0 0 #000, -32px 0 0 0 #000, 18px 0 0 0 #000, 32px 0 0 0 #000;
+    animation: wow-brow 3s linear infinite;
+}
+.eyebrows::after,
+.eyebrows::before
+{
+    position: absolute;
+    content: '';
+    width: 24px;
+    height: 20px;
+    border: 6px solid transparent;
+    box-sizing: border-box;
+    border-top-color: black;
+    top: -3px;
+    border-radius: 50%;
+}
+.eyebrows::before
+{
+    margin-left: -34px;
+}
+.eyebrows::after
+{
+    margin-left: 16px;
+}
+.eyes{
+    position: absolute;
+    width: 16px;
+    height: 24px;
+    left: 52px;
+    top: 35px;
+    border-radius: 50%;
+    box-shadow: 25px 0 0 0 #000, -25px 0 0 0 #000 ;
+}
+.mouth{
+    position: absolute;
+    width: 30px;
+    height: 45px;
+    background-color: black;
+    border-radius: 50%;
+    left: 45px;
+    top: 50%;
+    animation: wow-mouth 3s linear infinite;
+}
+@keyframes wow-face
+{
+    15%,25%
+    {
+        transform: rotate(20deg) translateX(-25px);
+    }
+    45%,65%
+    {
+        transform: rotate(-20deg) translateX(25px);
+    }
+    75%,100%
+    {
+        transform: rotate(0deg) translateX(0px);
+    }
+}
+@keyframes wow-brow
+{
+    15%, 65%
+    {
+        top: 25px;
+    }
+    75%,100%,0%
+    {
+        top: 15px;
+    }
+}
+@keyframes wow-mouth{
+    10%, 30%
+    {
+        width: 20px;
+        height: 20px;
+        left: 50px;
+    }
+    50%, 70%
+    {
+        width: 30px;
+        height: 30px;
+        left: 45px;
+    }
+    75%,100%
+    {
+        height: 50px;
+    }
+}
